@@ -1,0 +1,219 @@
+:root{
+    --bg1:#fff1f7;
+    --bg2:#ffe3ef;
+    --card:rgba(255,255,255,0.90);
+    --text:#2b2430;
+    --muted:#6c5f73;
+  
+    --pink:#ff5fa3;
+    --pink2:#ff86be;
+    --ring:rgba(255, 95, 163, 0.25);
+  
+    --border:#ffd2e6;
+    --shadow: 0 18px 50px rgba(255, 95, 163, 0.18);
+  }
+  
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  
+  body{
+    font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color:var(--text);
+    background:
+      radial-gradient(900px 500px at 15% 10%, #ffffff 0%, var(--bg1) 48%, var(--bg2) 100%);
+    min-height:100vh;
+    padding:24px;
+  }
+  
+  .container{
+    max-width: 1000px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  
+  .hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    padding: 4px 2px;
+  }
+  
+  h1{ font-size: 34px; letter-spacing:-0.6px; }
+  .sub{ margin-top:6px; color:var(--muted); }
+  
+  .card{
+    background:var(--card);
+    border:1px solid #fff;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 18px;
+    backdrop-filter: blur(8px);
+  }
+  
+  .cardHead{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom: 12px;
+  }
+  
+  h2{ font-size: 18px; }
+  
+  .pill{
+    font-size: 12px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: #ffe8f2;
+    border: 1px solid var(--border);
+    color:#8b2d56;
+  }
+  
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  
+  label{
+    font-size: 12px;
+    color: var(--muted);
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  
+  input{
+    border: 1px solid var(--border);
+    background: #fff;
+    border-radius: 14px;
+    padding: 12px 12px;
+    font-size: 14px;
+    outline:none;
+    transition: box-shadow .15s ease, border-color .15s ease;
+  }
+  
+  input:focus{
+    border-color: #ffb8d7;
+    box-shadow: 0 0 0 4px var(--ring);
+  }
+  
+  .hint{
+    color: var(--muted);
+    opacity: 0.9;
+    font-size: 11px;
+    margin-top: 2px;
+  }
+  
+  .checkRow{
+    flex-direction:row;
+    align-items:center;
+    gap:10px;
+    padding-top: 20px;
+  }
+  .checkRow input{ width: 18px; height: 18px; }
+  
+  .actions{
+    display:flex;
+    gap:10px;
+    margin-top: 14px;
+  }
+  
+  .btn{
+    border:0;
+    border-radius: 14px;
+    padding: 11px 14px;
+    font-weight: 600;
+    cursor:pointer;
+    transition: transform .06s ease, filter .15s ease, box-shadow .15s ease;
+  }
+  .btn:active{ transform: translateY(1px); }
+  
+  .primary{
+    color:white;
+    background: linear-gradient(135deg, var(--pink), var(--pink2));
+    box-shadow: 0 12px 28px rgba(255, 95, 163, 0.35);
+  }
+  .primary:hover{ filter: brightness(1.03); }
+  
+  .ghost{
+    background: #fff;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .ghost:hover{ box-shadow: 0 10px 22px rgba(0,0,0,0.06); }
+  
+  .note{
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  
+  .listHead{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 0 4px;
+  }
+  
+  .muted{ color:var(--muted); font-size: 12px; }
+  
+  .cards{
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  
+  .student{
+    background: rgba(255,255,255,0.92);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 14px;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.05);
+  }
+  
+  .student .name{
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .meta{
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  
+  .badge{
+    display:inline-block;
+    margin-top: 10px;
+    font-size: 12px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: #ffe8f2;
+    color:#8b2d56;
+  }
+  
+  .badge.inc{
+    background: #fff3d6;
+    border-color: #ffd48b;
+    color: #8a5400;
+  }
+  
+  .row{
+    display:flex;
+    gap:8px;
+    margin-top: 12px;
+  }
+  
+  .danger{
+    background:#fff5f8;
+    border: 1px solid var(--border);
+    color:#a61b4d;
+  }
+  
+  @media (max-width: 920px){
+    .grid, .cards{ grid-template-columns: 1fr; }
+    .checkRow{ padding-top: 0; }
+  }  

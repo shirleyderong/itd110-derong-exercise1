@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StudentDB • ITD110</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div>
+        <h1>StudentDB</h1>
+        <p class="sub">ITD110 Student Manager</p>
+      </div>
+      <button id="refreshBtn" class="btn ghost" type="button">Refresh</button>
+    </header>
+
+    <section class="card">
+      <div class="cardHead">
+        <h2 id="formTitle">Add student</h2>
+        <span class="pill" id="statusPill">Ready</span>
+      </div>
+
+      <form id="studentForm" autocomplete="off">
+        <input type="hidden" id="studentId" />
+
+        <div class="grid">
+          <label>
+            Name
+            <input id="name" type="text" placeholder="e.g., Zara Larsson" required />
+          </label>
+
+          <label>
+            Email
+            <input id="email" type="email" placeholder="e.g., zaralarsson@email.com" required />
+          </label>
+
+          <label>
+            Course
+            <input id="course" type="text" placeholder="e.g., ITD110" required />
+          </label>
+
+          <label>
+            GPA
+            <input id="gpa" type="number" min="1" max="5" step="0.25" placeholder="e.g., 1.75" />
+            <small class="hint">Allowed: 1.00, 1.50, 2.25, 3.00, 5.00.</small>
+          </label>
+
+          <label class="checkRow">
+            <input id="inc" type="checkbox" />
+            <span>INC (Incomplete)</span>
+          </label>
+
+          <label>
+            Age (optional)
+            <input id="age" type="number" min="16" max="100" step="1" placeholder="e.g., 20" />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" type="submit" id="submitBtn">Save</button>
+          <button class="btn ghost" type="button" id="clearBtn">Clear</button>
+        </div>
+
+        <p class="note">
+          The app will display GPA and its corresponding remarks (e.g., "Good", "Excellent").
+        </p>
+      </form>
+    </section>
+
+    <section class="list">
+      <div class="listHead">
+        <h2>Students</h2>
+        <span class="muted" id="countText">0 total</span>
+      </div>
+
+      <div id="studentList" class="cards"></div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
